@@ -16,6 +16,7 @@ matrix:
     - nodejs_version: 1
 
 install:
+  - REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Guest\Parameters" -v HostName
   - ps: Install-Product node $env:nodejs_version
   - node --version
   - npm --version
